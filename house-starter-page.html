@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="./images/shortcuticon.png" />
+    <title>Congressmen</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img class="logo" src="./images/tgiflogo.png" alt="" />
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Congress 113
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="house-starter-page.html">House</a>
+              <a class="dropdown-item" href="senate-starter-page.html"
+                >Senate</a
+              >
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Attendance
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="house-attendance-starter-page.html"
+                >House</a
+              >
+              <a
+                class="dropdown-item"
+                href="senate-attendance-starter-page.html"
+                >Senate</a
+              >
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Party Loyalty
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a
+                class="dropdown-item"
+                href="house-party-loyalty-starter-page.html"
+                >House</a
+              >
+              <a
+                class="dropdown-item"
+                href="senate-party-loyalty-starter-page.html"
+                >Senate</a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+      <a class="mailto" href="mailto:info@tgif.net" target="_top"
+        >info@tgif.net</a
+      >
+    </nav>
+    <div>
+      <h2>Congressmen</h2>
+      <p>
+        The major power of the House is to pass federal legislation that affects
+        the entire country, although its bills must also be passed by the Senate
+        and further agreed to by the U.S. President before becoming law (unless
+        both the House and Senate re-pass the legislation with a two-thirds
+        majority in each chamber). The House has some exclusive powers: the
+        power to initiate revenue bills, to impeach officials (impeached
+        officials are subsequently tried in the Senate), and to elect the U.S.
+        President in case there is no majority in the Electoral College.
+      </p>
+      <p>
+        Each U.S. state is represented in the House in proportion to its
+        population as measured in the census, but every state is entitled to at
+        least one representative.
+      </p>
+      <div><p>Filter by Party:</p></div>
+      <div class="filterparty"></div>
+      <div class="allFilters">
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            type="checkbox"
+            name="partyCheck"
+            class="custom-control-input"
+            id="checkboxR"
+            value="R"
+          />
+          <label class="custom-control-label" for="checkboxR"
+            >Republicans</label
+          >
+        </div>
+
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            type="checkbox"
+            name="partyCheck"
+            class="custom-control-input"
+            id="checkboxD"
+            value="D"
+          />
+          <label class="custom-control-label" for="checkboxD">Democrats</label>
+        </div>
+
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            type="checkbox"
+            name="partyCheck"
+            class="custom-control-input"
+            id="checkboxI"
+            value="I"
+          />
+          <label class="custom-control-label" for="checkboxI"
+            >Independents</label
+          >
+        </div>
+
+        <select id="selectState" class="stateFilter" name="selector">
+          <option value="All">All</option>
+        </select>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Party</th>
+          <th>State</th>
+          <th>Seniority</th>
+          <th>% Of Votes</th>
+        </tr>
+      </thead>
+      <tbody id="table"></tbody>
+    </table>
+    <div id="loader"></div>
+    <footer class="page-footer font-small blue">
+      <div class="footer-copyright text-center py-3">
+        © 2020 TGIF | All Rights Reserved
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="113house.js"></script>
+    <script src="house.js"></script>
+  </body>
+</html>
