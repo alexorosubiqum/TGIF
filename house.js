@@ -79,7 +79,6 @@ function addListeners() {
   }
   var stateSelector = document.getElementById("selectState");
   stateSelector.addEventListener("change", filter);
-  console.log(stateSelector.value);
 }
 
 function filter() {

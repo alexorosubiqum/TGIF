@@ -169,7 +169,6 @@ function arrangeOrderReverse(a, b) {
 //LEAST 10 TABLE|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 var least10LoyalTable = document.getElementById("least10LoyalTable");
-var members = datahouse.results[0].members;
 
 function createLeastTable(array) {
   var ordered = array.sort(arrangeOrderReverse);

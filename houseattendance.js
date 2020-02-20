@@ -83,8 +83,6 @@ function getStatistics(array) {
     statistics.averageIndependents =
       statistics.votesIndependents / statistics.independents;
   }
-
-  console.log(statistics);
 }
 
 function fillTable(statistics) {
@@ -171,7 +169,6 @@ function arrangeOrderReverse(a, b) {
 //LEAST 10 TABLE|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 var least10AttendanceTable = document.getElementById("least10AttendanceTable");
-//var members = datahouse.results[0].members;
 
 function createLeastTable(array) {
   var ordered = array.sort(arrangeOrder);
