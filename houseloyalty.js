@@ -11,16 +11,16 @@ if (window.location.href.includes("house")) {
 fetch(URL, {
   method: "GET",
   headers: {
-    "X-API-Key": "LQKdMbxtj5mUm2AbK2kXZXhjdOeLECANE8MRmhcN"
-  }
+    "X-API-Key": "LQKdMbxtj5mUm2AbK2kXZXhjdOeLECANE8MRmhcN",
+  },
 })
-  .then(function(response) {
+  .then(function (response) {
     if (response.ok) {
       return response.json();
     }
     throw new Error(response.statusText);
   })
-  .then(function(json) {
+  .then(function (json) {
     data = json;
     members = data.results[0].members;
     document.getElementById("loader").style.display = "none";
@@ -48,7 +48,7 @@ var statistics = {
   averageRepublicans: 0,
   averageDemocrats: 0,
   averageIndependents: 0,
-  totalAverage: 0
+  totalAverage: 0,
 };
 
 function getStatistics(array) {
